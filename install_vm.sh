@@ -11,13 +11,14 @@
 # the ARM installer for Ubuntu was downloaded from the
 # official website.
 
-# The only difference between this file and the other
-# is the creation of the raw disk image
-# and the addition of the -cdrom entry at start
+# I don't have anything related to spice and resizable windows
+# here because you can't be certain the installer you boot from
+# includes it.
 
 # This creates a raw disk image of 30GB. Naturally,
 # you need at least 30GB of free space for this
-# to work.
+# to work. The initial disk won't be that size, it will grow
+# as you fill it.
 qemu-img create -f raw ubuntu.raw 30G
 
 qemu-system-aarch64 -monitor stdio \

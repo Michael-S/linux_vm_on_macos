@@ -12,13 +12,31 @@ not violate any licenses.
 You need:
 
 1. A MacOS device running an M1 or newer processor.
-2. QEMU installed on the MacOS device. (I recommend using brew,
-   so installation would be `brew install qemu`.)
-3. The file `QEMU_EFI.fd` for aarch64/ARM64.  I had a Linux server
+
+2. QEMU with spice installed on the MacOS device. 
+UPDATE: I used to recommend `brew install qemu` for this, but
+as of September 2026 the `qemu` package for the otherwise spectacular
+`brew` tool didn't include it.  Instead I had to use
+https://github.com/stuffbucket/homebrew-qemu-spice
+
+`spice` gives you a graphical interface that lets you scale your
+guest interface up and down as you resize the viewing window.
+Without it, I've found myself stuck with VM guest viewing windows
+that were either too small or too big. I tried to modify guest
+Linux kernel boot arguments to add custom resolutions, but I got all
+kinds of crashes and weird visual artifacts on the Linux VMs with
+non-standard resolutions.
+
+3. Spice on the host. I recommend `brew install spice-gtk`.
+   This is also recommended in the homebrew-qemu-spice project
+   I linked above.
+
+4. The file `QEMU_EFI.fd` for aarch64/ARM64.  I had a Linux server
    available so I did `sudo apt install qemu-efi-aarch64` and
    then copied `/usr/share/qemu-efi-aarch64/QEMU_EFI.fd` to
    the directory with these files.
-4. A Linux ARM64/aarch64 installer ISO.
+
+5. A Linux ARM64/aarch64 installer ISO.
 
 ### To Use
 
