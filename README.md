@@ -54,6 +54,8 @@ QEMU and trying again.
 
 After you've run through the installer to set up your VM,
 you can shut it down.  Then `./run_vm.sh` will run it.
+After that, run `spicy -h 127.0.0.1 -p 5900` to get your
+spicy window.
 
 Note that I used output redirection on the QEMU commands
 so that your terminal doesn't get taken over by QEMU.
